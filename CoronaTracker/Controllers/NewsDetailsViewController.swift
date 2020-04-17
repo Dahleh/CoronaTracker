@@ -9,7 +9,7 @@
 import UIKit
 
 class NewsDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var imgNews: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var txtContent: UITextView!
@@ -41,16 +41,16 @@ class NewsDetailsViewController: UIViewController {
     }
     @IBAction func readMoreAction(_ sender: Any) {
         guard let url = URL(string: news.url) else { return }
-                UIApplication.shared.open(url)
+        UIApplication.shared.open(url)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
