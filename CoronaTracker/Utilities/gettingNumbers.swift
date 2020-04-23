@@ -17,7 +17,7 @@ class gettingNumbers {
     var latestData = Latest()
     func getAllNumbers(completion: @escaping CompletionHandler){
         
-        AF.request("https://corona.lmao.ninja/countries", method: .get, encoding: JSONEncoding.default).responseJSON { (respones) in
+        AF.request("https://corona.lmao.ninja/v2/countries", method: .get, encoding: JSONEncoding.default).responseJSON { (respones) in
             switch respones.result{
             case .success(let value):
                 let json = JSON(value)
@@ -57,7 +57,7 @@ class gettingNumbers {
     
     func getLatest(completion: @escaping CompletionHandler){
         var latest = Latest()
-        AF.request("https://corona.lmao.ninja/all", method: .get, encoding: JSONEncoding.default).responseJSON { (response) in
+        AF.request("https://corona.lmao.ninja/v2/all", method: .get, encoding: JSONEncoding.default).responseJSON { (response) in
             switch response.result{
             case .success(let value):
                 let json = JSON(value)
