@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eka-1a-HOa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -354,6 +354,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FI-k8-GRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-975.36231884057975" y="320.75892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dug-Rm-KwW">
+            <objects>
+                <viewController id="8Yw-EH-tKe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BLh-ho-kO7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-QP-WnI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ka7-jV-WKa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-L8-PEi">
+                                        <rect key="frame" x="50" y="233" width="315" height="430"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cIw-L8-PEi" secondAttribute="bottom" constant="233" id="4Ws-G2-3PP"/>
+                                    <constraint firstAttribute="trailing" secondItem="cIw-L8-PEi" secondAttribute="trailing" constant="49" id="6eY-Pg-14s"/>
+                                    <constraint firstItem="cIw-L8-PEi" firstAttribute="top" secondItem="Ka7-jV-WKa" secondAttribute="top" constant="233" id="ibO-N7-11k"/>
+                                    <constraint firstItem="cIw-L8-PEi" firstAttribute="leading" secondItem="Ka7-jV-WKa" secondAttribute="leading" constant="50" id="sOj-ar-vKV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ka7-jV-WKa" firstAttribute="centerX" secondItem="BLh-ho-kO7" secondAttribute="centerX" id="TN1-3h-63A"/>
+                            <constraint firstItem="Ka7-jV-WKa" firstAttribute="top" secondItem="BLh-ho-kO7" secondAttribute="topMargin" constant="-44" id="b6c-Wc-I5b"/>
+                            <constraint firstItem="Ka7-jV-WKa" firstAttribute="leading" secondItem="jZR-Ct-joL" secondAttribute="leading" id="iPl-JZ-sdV"/>
+                            <constraint firstItem="Ka7-jV-WKa" firstAttribute="centerY" secondItem="BLh-ho-kO7" secondAttribute="centerY" id="xBG-9n-tac"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jZR-Ct-joL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GhM-k2-Rxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117.39130434782609" y="320.75892857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TkY-se-EIo">
