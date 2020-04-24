@@ -8,5 +8,6 @@ target 'CoronaTracker' do
   # Pods for CoronaTracker
   pod 'GoogleMaps'
   pod 'Alamofire'
+pod 'SJFrameSwift', :git => 'https://github.com/SJClass/SJFrameSwift.git'
 pod 'SwiftyJSON'
 end

@@ -5,11 +5,13 @@ PODS:
   - GoogleMaps/Base (3.8.0)
   - GoogleMaps/Maps (3.8.0):
     - GoogleMaps/Base
+  - SJFrameSwift (0.1.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - GoogleMaps
+  - SJFrameSwift (from `https://github.com/SJClass/SJFrameSwift.git`)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -18,11 +20,21 @@ SPEC REPOS:
     - GoogleMaps
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  SJFrameSwift:
+    :git: https://github.com/SJClass/SJFrameSwift.git
+
+CHECKOUT OPTIONS:
+  SJFrameSwift:
+    :commit: 1d6fbed4ce117be75a772d5dfae9034fa60a0b27
+    :git: https://github.com/SJClass/SJFrameSwift.git
+
 SPEC CHECKSUMS:
   Alamofire: 0fe5fd24b4298dc377a6550da7d5f1b30e286fcb
   GoogleMaps: 7c8d66d70e4e8c300f43a7219d8fdaad7b325a9a
+  SJFrameSwift: d8a2b08d7074eb8d41046828d44a2e024c92b91e
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: c3bccc83999d65c7283c8b9db31a16c3074ebefd
+PODFILE CHECKSUM: e36b87c8055e9100943f312da37d9680582904b0
 
 COCOAPODS: 1.8.4

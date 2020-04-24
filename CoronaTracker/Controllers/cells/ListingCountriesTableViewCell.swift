@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SJFrameSwift
 
-class ListingCountriesTableViewCell: UITableViewCell {
+class ListingCountriesTableViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imgFlag: UIImageView!
     @IBOutlet weak var lblName: UILabel!
@@ -23,37 +24,13 @@ class ListingCountriesTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+   
 
     func setData(country: Country){
-        lblName.text = "Country Name: \(country.country ?? "")"
-        lblConfirmed.text = "Confirmed Cases: \(country.confirmed ?? "")"
-        lblRecovered.text = "Recovered Cases: \(country.recovered ?? "")"
-        lblDeaths.text = "Death Cases: \(country.deaths ?? "")"
-        lblToday.text = "Today Cases: \(country.todayCases ?? "")"
-        lblActive.text = "Active Cases: \(country.active ?? "")"
-        lblCritical.text = "Critical Cases: \(country.critical ?? "")"
-        let url = URL(string: country.flag)!
-        downloadImage(from: url)
+        lblName.text = "\(country.country ?? "")"
+        lblConfirmed.text = "Confirmed: \(country.confirmed ?? "")"
+
     }
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
-    func downloadImage(from url: URL) {
-        print("Download Started")
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.imgFlag.image = UIImage(data: data)
-            }
-        }
-    }
+
 }

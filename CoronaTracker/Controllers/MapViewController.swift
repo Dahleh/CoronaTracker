@@ -9,9 +9,9 @@
 import UIKit
 import GoogleMaps
 import SwiftyJSON
-import Alamofire
+import SJFrameSwift
 
-class MapViewController: UIViewController {
+class MapViewController: SJViewController {
     
     
     @IBOutlet weak var confirmedLbl: UILabel!
@@ -27,6 +27,7 @@ class MapViewController: UIViewController {
         
         gettingNumbers.instance.getAllNumbers{(success) in
             if success{
+                self.showLoader()
                 print("Loaded")
                 for item in gettingNumbers.instance.countries{
                     let marker = GMSMarker()
@@ -35,10 +36,7 @@ class MapViewController: UIViewController {
                     marker.snippet = "Confirmed: \(item.confirmed ?? "") Today Cases: \(item.todayCases ?? "") Deaths: \(item.deaths ?? "") Recovered: \(item.recovered ?? "") Critical: \(item.critical ?? "") Active: \(item.active ?? "")"
                     marker.map = self.map
                 }
-                
-                //                self.confirmedLbl.text = "Confirmed: \(gettingNumbers.instance.latestData.confirmed ?? "")"
-                //                self.deathsLbl.text = "Deaths: \(gettingNumbers.instance.latestData.deaths ?? "")"
-                //                self.recoveredLbl.text = "Recovered: \(gettingNumbers.instance.latestData.recovered ?? "")"
+                self.hideLoader()
             }else{
                 print("not loaded")
             }

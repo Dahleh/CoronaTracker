@@ -8,38 +8,50 @@
 
 import UIKit
 
-class ListingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class ListingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchField: UISearchBar!
     var searchdata = [Country]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         searchField.delegate = self
         searchdata = gettingNumbers.instance.countries
         // Do any additional setup after loading the view.
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("dsfadsfasdf\(gettingNumbers.instance.countries.count)")
-        return searchdata.count
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "toPopUp" {
+               let rVC = segue.destination as! PopUpViewController
+            rVC.country = sender as? Country ?? Country()
+           }
+       }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         return searchdata.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell.listing.item", for: indexPath) as? ListingCountriesTableViewCell{
-            print("OIOIOIOIOI\(gettingNumbers.instance.countries[indexPath.row])")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell.item", for: indexPath) as? ListingCountriesTableViewCell{
             cell.setData(country: searchdata[indexPath.row])
             return cell
         }
-        return UITableViewCell()
+        return UICollectionViewCell()
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toPopUp", sender: searchdata[indexPath.row])
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.view.endEditing(true)
     }
@@ -50,7 +62,7 @@ class ListingViewController: UIViewController, UITableViewDataSource, UITableVie
 
         searchBar.endEditing(true)
 
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
         
@@ -68,7 +80,7 @@ class ListingViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
 }

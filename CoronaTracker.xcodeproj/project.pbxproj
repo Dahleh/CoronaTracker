@@ -23,6 +23,7 @@
 		CD4FB8002428C6200005B891 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4FB7FE2428C6200005B891 /* Main.storyboard */; };
 		CD4FB8022428C6220005B891 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4FB8012428C6220005B891 /* Assets.xcassets */; };
 		CD4FB8052428C6220005B891 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4FB8032428C6220005B891 /* LaunchScreen.storyboard */; };
+		CDEE45622451DA7C00FE3A90 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE45612451DA7C00FE3A90 /* PopUpViewController.swift */; };
 		E9A43451A58C28FB0A945AEA /* Pods_CoronaTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A143064C256BBF09A6A4E8C /* Pods_CoronaTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		CD4FB8012428C6220005B891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD4FB8042428C6220005B891 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD4FB8062428C6220005B891 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDEE45612451DA7C00FE3A90 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				CD07D47224422A3F00FA92DE /* ListingViewController.swift */,
 				CD0978CE2444A0FC00AE8A6B /* NewsViewController.swift */,
 				CD0978D22444C0A200AE8A6B /* NewsDetailsViewController.swift */,
+				CDEE45612451DA7C00FE3A90 /* PopUpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				CD4FB7FB2428C6200005B891 /* SceneDelegate.swift in Sources */,
 				CD0978D32444C0A300AE8A6B /* NewsDetailsViewController.swift in Sources */,
 				CD07D47324422A3F00FA92DE /* ListingViewController.swift in Sources */,
+				CDEE45622451DA7C00FE3A90 /* PopUpViewController.swift in Sources */,
 				CD2D78652428CF57002FA9F6 /* gettingNumbers.swift in Sources */,
 				CD2D78672428CFE4002FA9F6 /* Constants.swift in Sources */,
 				CD0978CD24449FB000AE8A6B /* News.swift in Sources */,
